@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: Arial;
-      background: #b2dfdb;
+      background: #80A1BA;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -15,26 +15,31 @@
     form {
       background: white;
       padding: 30px;
-      border-radius: 12px;
+      border-radius: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       width: 300px;
+      
     }
-    h2 { text-align: center; color: #004d40; }
+    h2 { text-align: center; color: #176bacff; }
+
     input {
-      width: 100%;
+      width: 90%;
       padding: 10px;
-      margin: 8px 0;
+      margin: 8px auto;
       border: 1px solid #ccc;
       border-radius: 5px;
+      display: block;
     }
     button {
       width: 100%;
       padding: 10px;
-      background: #00796b;
+      background: #80A1BA;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin: 10px auto;
+      display: block;
     }
     button:hover { background: #004d40; }
   </style>

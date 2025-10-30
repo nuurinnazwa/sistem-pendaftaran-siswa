@@ -16,6 +16,7 @@
       <a href="beranda.php">Beranda</a>
       <a href="tentang_sekolah.php">Tentang Sekolah</a>
       <a href="informasi_pendaftaran.php">Informasi pendaftaran</a>
+      <a href="pendaftaran.php">Pendaftaran</a>
       <a href="kontak.php">Kontak</a>
     </nav>
   </header>
