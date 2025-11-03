@@ -40,8 +40,8 @@
 <body>
 
 <form action="proses_register.php" method="POST">
-  <h2> Register & Login</h2>
-  <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+  <h2> Register</h2>
+  <input type="text" name="username" placeholder="Username" required>
   <input type="email" name="email" placeholder="Email" required>
   <input type="password" name="password" placeholder="Password" required>
   <button type="submit" name="register">Daftar</button>

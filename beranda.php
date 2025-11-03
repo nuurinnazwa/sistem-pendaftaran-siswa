@@ -11,7 +11,7 @@
 <body>
 
   <header>
-    <h1>Sistem Pendaftaran Siswa Baru</h1>
+    <h1>SMK TUNAS HARAPAN</h1>
     <nav>
       <a href="beranda.php">Beranda</a>
       <a href="tentang_sekolah.php">Tentang Sekolah</a>

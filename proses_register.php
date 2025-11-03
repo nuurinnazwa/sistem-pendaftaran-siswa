@@ -1,21 +1,29 @@
 <?php
+session_start();
 include 'koneksi.php';
 
-if (isset($_POST['register'])) {
-    $nama = $_POST['nama_lengkap'];
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name  = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $pass  = $_POST['password'] ?? '';
 
-    $query = "INSERT INTO register (nama_lengkap, email, password)
-              VALUES ('$nama', '$email', '$password')";
-    $result = mysqli_query($koneksi, $query);
-
-    if ($result) {
-        echo "<script>alert('Pendaftaran berhasil! Silakan login.');
-        window.location='login.php';</script>";
+    if (!$name || !$email || !$pass) {
+        $error = "Lengkapi semua field.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Email tidak valid.";
     } else {
-        echo "<script>alert('Terjadi kesalahan, coba lagi.');
-        window.location='register.php';</script>";
+        // cek apakah email sudah terdaftar
+        $stmt = $pdo->prepare("SELECT id FROM user WHERE email = ?");
+        $stmt->execute([$email]);
+        if ($stmt->fetch()) {
+            $error = "Email sudah terdaftar.";
+        } else {
+            $hash = password_hash($pass, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("INSERT INTO user (username, email, password) VALUES (?, ?, ?)");
+            $stmt->execute([$name, $email, $hash]);
+            header('Location: login.php?registered=1');
+            exit;
+        }
     }
 }
 ?>

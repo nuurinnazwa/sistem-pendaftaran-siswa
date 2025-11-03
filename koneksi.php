@@ -1,19 +1,20 @@
-  <?php
+<?php
+// contoh koneksi.php (PDO)
+$host = 'localhost';
+$db   = 'sistem_pendaftaran_siswa';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
 
-  $host = "localhost";
-  $user = "root";
-  $pass = "";
-  $db = "sistem_pendaftaran_siswa";
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
 
-  //koneksi
-  $koneksi = mysqli_connect($host, $user, $pass, $db);
-
-  // cek koneksi
-  if (!$koneksi) {
-    die("koneksi database gagal: ".mysqli_connect_error());
-  }else{
-
-  }
-?>
-  
-  
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (PDOException $e) {
+    die('Koneksi gagal: ' . $e->getMessage());
+}

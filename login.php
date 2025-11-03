@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: Arial;
-      background: #80A1BA;
+      background: #a1c7c5ff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,7 +20,7 @@
       width: 300px;
       
     }
-    h2 { text-align: center; color: #176bacff; }
+    h2 { text-align: center; color: #176bacff }
 
     input {
       width: 90%;
@@ -33,7 +33,7 @@
     button {
       width: 100%;
       padding: 10px;
-      background: #80A1BA;
+      background: #269baaff;
       color: white;
       border: none;
       border-radius: 5px;
@@ -41,7 +41,7 @@
       margin: 10px auto;
       display: block;
     }
-    button:hover { background: #004d40; }
+    button:hover { background: #175b63ff; }
   </style>
 </head>
 <body>
